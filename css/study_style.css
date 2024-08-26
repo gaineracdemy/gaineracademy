@@ -1,0 +1,219 @@
+      
+.classes-item{padding-top: 50px;}
+#chapter-select{width:350px;}
+#subject-select{width:250px;}
+
+/* Donwnload Button */
+.button-30 {
+align-items: center;
+appearance: none;
+background-color: #FCFCFD;
+border-radius: 4px;
+border-width: 0;
+box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+box-sizing: border-box;
+color: #36395A;
+cursor: pointer;
+display: inline-flex;
+font-family: "JetBrains Mono", monospace;
+height: 48px;
+justify-content: center;
+line-height: 1;
+list-style: none;
+overflow: hidden;
+padding-left: 16px;
+padding-right: 16px;
+position: relative;
+text-align: left;
+text-decoration: none;
+transition: box-shadow .15s, transform .15s;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+white-space: nowrap;
+will-change: box-shadow, transform;
+font-size: 18px;
+}
+.button-30:focus {
+box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+.button-30:hover {
+box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+transform: translateY(-2px);
+}
+.button-30:active {
+box-shadow: #D6D6E7 0 3px 7px inset;
+transform: translateY(2px);
+}
+/* Check Boxes  */
+.radio-wrapper-22 *,
+.radio-wrapper-22 *:after,
+.radio-wrapper-22 *:before {
+  box-sizing: border-box;
+}
+
+.radio-wrapper-22 .radio-input {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.radio-wrapper-22 .radio-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 9rem;
+  min-height: 7rem;
+  border-radius: 0.5rem;
+  border: 2px solid #b5bfd9;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.15s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.radio-wrapper-22 .radio-tile:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #b5bfd9;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 0.25rem;
+  left: 0.25rem;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.25s ease;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='192' height='192' fill='%23FFFFFF' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpolyline points='216 72.005 104 184 48 128.005' fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='32'%3E%3C/polyline%3E%3C/svg%3E");
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.radio-wrapper-22 .radio-input:checked + .radio-tile:before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Hover Effects */
+.radio-wrapper-22 .radio-tile:hover {
+  border-color: #2260ff;
+}
+
+.radio-wrapper-22 .radio-tile:hover:before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.radio-wrapper-22 .radio-icon {
+  transition: 0.375s ease;
+  color: #494949;
+  font-size: 25px;
+}
+
+.radio-wrapper-22 .radio-label {
+  color: #707070;
+  transition: 0.375s ease;
+  text-align: center;
+}
+
+/* YouTube Specific Styles */
+.radio-wrapper-22 .radio-input:checked + .radio-tile.youtube {
+  border-color: #FF0000; /* YouTube Red */
+  box-shadow: 0 5px 10px rgba(255, 0, 0, 0.1);
+  color: #FF0000;
+}
+.radio-wrapper-22 .radio-input:checked + .radio-tile.youtube:before {
+  background-color: #FF0000;
+  border-color: #ff8686;
+}
+.radio-wrapper-22 .radio-input:checked + .radio-tile.youtube .radio-icon,
+.radio-wrapper-22 .radio-input:checked + .radio-tile.youtube .radio-label {
+  color: #FF0000;
+}
+
+/* Facebook Specific Styles */
+.radio-wrapper-22 .radio-input:checked + .radio-tile.facebook {
+  border-color: #ffc107; /* Facebook Blue */
+  box-shadow: 0 5px 10px rgba(59, 89, 152, 0.1);
+  color: #f1db97;
+}
+.radio-wrapper-22 .radio-input:checked + .radio-tile.facebook:before {
+  background-color: #ffd416;
+  border-color: #ffe368;
+}
+.radio-wrapper-22 .radio-input:checked + .radio-tile.facebook .radio-icon,
+.radio-wrapper-22 .radio-input:checked + .radio-tile.facebook .radio-label {
+  color: #fdcf00;
+}
+
+/* Twitter Specific Styles */
+.radio-wrapper-22 .radio-input:checked + .radio-tile.twitter {
+  border-color: #1DA1F2; /* Twitter Sky Blue */
+  box-shadow: 0 5px 10px rgba(29, 161, 242, 0.1);
+  color: #91d5ff;
+}
+.radio-wrapper-22 .radio-input:checked + .radio-tile.twitter:before {
+  background-color: #1DA1F2;
+  border-color: #8bd3ff;
+}
+.radio-wrapper-22 .radio-input:checked + .radio-tile.twitter .radio-icon,
+.radio-wrapper-22 .radio-input:checked + .radio-tile.twitter .radio-label {
+  color: #1DA1F2;
+}
+
+
+/* Previous Exam Papers Specific Styles */
+.radio-wrapper-22 .radio-input:checked + .radio-tile.exams {
+  border-color: #c670cc; /* Twitter Sky Blue */
+  box-shadow: 0 5px 10px rgba(29, 161, 242, 0.1);
+  color: #fab7ff;
+}
+.radio-wrapper-22 .radio-input:checked + .radio-tile.exams:before {
+  background-color: #c670cc;
+  border-color: #fbc3ff;
+}
+.radio-wrapper-22 .radio-input:checked + .radio-tile.exams .radio-icon,
+.radio-wrapper-22 .radio-input:checked + .radio-tile.exams .radio-label {
+  color: #c670cc;
+}
+
+/* Mock Test Specific Styles */
+.radio-wrapper-22 .radio-input:checked + .radio-tile.mock {
+  border-color: #fd6d81; /* Twitter Sky Blue */
+  box-shadow: 0 5px 10px rgba(29, 161, 242, 0.1);
+  color: #f89ca8;
+}
+.radio-wrapper-22 .radio-input:checked + .radio-tile.mock:before {
+  background-color: #fd6d81;
+  border-color: #ffc4cc;
+}
+.radio-wrapper-22 .radio-input:checked + .radio-tile.mock .radio-icon,
+.radio-wrapper-22 .radio-input:checked + .radio-tile.mock .radio-label {
+  color: #fd6d81;
+}
+
+
+/* Earn While Learn Specific Styles */
+.radio-wrapper-22 .radio-input:checked + .radio-tile.earn {
+  border-color: #20c997; /* Twitter Sky Blue */
+  box-shadow: 0 5px 10px rgba(29, 161, 242, 0.1);
+  color: #7afad4;
+}
+.radio-wrapper-22 .radio-input:checked + .radio-tile.earn:before {
+  background-color: #20c997;
+  border-color: #9effe2;
+}
+.radio-wrapper-22 .radio-input:checked + .radio-tile.earn .radio-icon,
+.radio-wrapper-22 .radio-input:checked + .radio-tile.earn .radio-label {
+  color: #20c997;
+}

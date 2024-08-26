@@ -29,54 +29,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-
-    <style>
-        .classes-item{padding-top: 50px;}
-        #chapter-select{width:350px;}
-        #subject-select{width:250px;}
-        /* CSS Button */
-        .button-30 {
-        align-items: center;
-        appearance: none;
-        background-color: #FCFCFD;
-        border-radius: 4px;
-        border-width: 0;
-        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-        box-sizing: border-box;
-        color: #36395A;
-        cursor: pointer;
-        display: inline-flex;
-        font-family: "JetBrains Mono", monospace;
-        height: 48px;
-        justify-content: center;
-        line-height: 1;
-        list-style: none;
-        overflow: hidden;
-        padding-left: 16px;
-        padding-right: 16px;
-        position: relative;
-        text-align: left;
-        text-decoration: none;
-        transition: box-shadow .15s, transform .15s;
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
-        white-space: nowrap;
-        will-change: box-shadow, transform;
-        font-size: 18px;
-        }
-        .button-30:focus {
-        box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-        }
-        .button-30:hover {
-        box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-        transform: translateY(-2px);
-        }
-        .button-30:active {
-        box-shadow: #D6D6E7 0 3px 7px inset;
-        transform: translateY(2px);
-        }
-    </style>
+    <link href="css/study_style.css" rel="stylesheet">
 
 </head>
 
@@ -110,9 +63,11 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Student Section</a>
                         <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
-                            <a href="study.html" class="dropdown-item">Study Notes</a>
-                            <a href="facility.html" class="dropdown-item">Video Lecture</a>
-                            <a href="call-to-action.html" class="dropdown-item">Previous Exam Papers</a>
+                            <!-- Hyperlinks to Trigger Radio Buttons -->
+                            <a href="study.html?select=notes" class="dropdown-item">Study Notes</a>
+                            <a href="study.html?select=youtube" class="dropdown-item">Video Lecture</a>
+                            <a href="study.html?select=books" class="dropdown-item">Text Books</a>
+                            <a href="" class="dropdown-item">Previous Exam Papers</a>
                             <a href="appointment.html" class="dropdown-item">Mock Test</a>
                             <a href="testimonial.html" class="dropdown-item">Events</a>
                             <a href="testimonial.html" class="dropdown-item">Gallery</a>
@@ -172,13 +127,112 @@
             </div>
         </div>
         
+
+
+
         <!-- Classes Start -->
         <div class="container-xxl py-5">
             <div class="container">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3">Study Notes Section</h1>
-                    <p>The goal of education is not to increase the amount of knowledge but to create the possibilities for a child to invent and discover, to create men who are capable of doing new things.</p>
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
+                    <h1 id="header-text">Study Notes Section</h1>
+                    <p id="paragraph-text">The goal of education is not to increase the amount of knowledge but to create the possibilities for a child to invent and discover, to create men who are capable of doing new things.</p>    
+                    
+                    <div class="row g-1 mt-1">
+                        <!-- Video Lectures -->
+                        <div class="col-6 col-md-2">
+                            <div class="radio-wrapper-22 border-top border-3 border-primary pt-2">
+                                <label class="radio-wrapper" for="youtube">
+                                    <input type="radio" class="radio-input" name="radio-examples" id="youtube" />
+                                    <span class="radio-tile youtube">
+                                        <span class="radio-icon">
+                                            <i class="fab fa-youtube"></i>
+                                        </span>
+                                        <span class="radio-label">Video Lectures</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    
+                        <!-- Notes Download -->
+                        <div class="col-6 col-md-2">
+                            <div class="radio-wrapper-22 border-top border-3 border-warning pt-2">
+                                <label class="radio-wrapper" for="notes">
+                                    <input type="radio" class="radio-input" name="radio-examples" id="notes" />
+                                    <span class="radio-tile facebook">
+                                        <span class="radio-icon">
+                                            <i class="fa fa-file"></i>
+                                        </span>
+                                        <span class="radio-label">Notes Download</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    
+                        <!-- Books Download -->
+                        <div class="col-6 col-md-2">
+                            <div class="radio-wrapper-22 border-top border-3 border-info pt-2">
+                                <label class="radio-wrapper" for="books">
+                                    <input type="radio" class="radio-input" name="radio-examples" id="books" />
+                                    <span class="radio-tile twitter">
+                                        <span class="radio-icon">
+                                            <i class="fa fa-book"></i>
+                                        </span>
+                                        <span class="radio-label">Books Download</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    
+                        <!-- Previous Exam Papers -->
+                        <div class="col-6 col-md-2">
+                            <div class="radio-wrapper-22 border-top border-3 border-danger pt-2">
+                                <label class="radio-wrapper" for="previous-exams">
+                                    <input type="radio" class="radio-input" name="radio-examples" id="previous-exams" />
+                                    <span class="radio-tile exams">
+                                        <span class="radio-icon">
+                                            <i class="fas fa-clipboard"></i>
+                                        </span>
+                                        <span class="radio-label">Previous Exam Papers</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    
+                        <!-- Mock Test -->
+                        <div class="col-6 col-md-2">
+                            <div class="radio-wrapper-22 border-top border-3 border-light pt-2">
+                                <label class="radio-wrapper" for="mock-test">
+                                    <input type="radio" class="radio-input" name="radio-examples" id="mock-test" />
+                                    <span class="radio-tile mock">
+                                        <span class="radio-icon">
+                                            <i class="fas fa-laptop"></i>
+                                        </span>
+                                        <span class="radio-label">Mock Test</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Earn  -->
+                        <div class="col-6 col-md-2">
+                            <div class="radio-wrapper-22 border-top border-3 border-dark pt-2">
+                                <label class="radio-wrapper" for="earn">
+                                    <input type="radio" class="radio-input" name="radio-examples" id="earn" />
+                                    <span class="radio-tile earn">
+                                        <span class="radio-icon">
+                                            <i class="fa fa-rupee-sign"></i>
+                                        </span>
+                                        <span class="radio-label">Earn While Learn</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+
                 </div>
+
                 <div class="row g-4">
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="classes-item">
@@ -232,14 +286,14 @@
                                     </div>
                                     <div class="col-4">
                                         <div class="border-top border-3 border-success pt-2">
-                                            <h6 class="text-success mb-1">Premium</h6>
-                                            <small>All Free</small>
+                                            <h6 class="text-success mb-1">Premium </h6>
+                                            <small>Free</small>
                                         </div>
                                     </div>
                                     <div class="col-4">
                                         <div class="border-top border-3 border-warning pt-2">
                                             <h6 class="text-warning mb-1">Status:</h6>
-                                            <small>Comming Soon</small>
+                                            <small>Open Now</small>
                                         </div>
                                     </div>
                                 </div>
@@ -316,13 +370,16 @@
                                     <div class="col-4">
                                         <div class="border-top border-3 border-warning pt-2">
                                             <h6 class="text-warning mb-1">Status:</h6>
-                                            <small>Comming Soon</small>
+                                            <small>Open Now</small>
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
+
+
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="classes-item">
                             
@@ -809,6 +866,23 @@
     </div>
 
     <!-- JavaScript Libraries -->
+    <script>
+        window.onload = function() {
+          // Get the URL parameters
+          const urlParams = new URLSearchParams(window.location.search);
+          const selectedRadio = urlParams.get('select');
+      
+          // If the select parameter exists, trigger the radio button click
+          if (selectedRadio) {
+            const radioButton = document.getElementById(selectedRadio);
+            if (radioButton) {
+              radioButton.checked = true; // Check the radio button
+              radioButton.dispatchEvent(new Event('change')); // Trigger any change events if necessary
+            }
+          }
+        };
+      </script>
+      
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/notes.js"></script>

@@ -240,3 +240,70 @@ function populateChapterSelect(chapters) {
         }
     });
 }
+
+
+//  Script to Handle Selection 
+    window.onload = function() {
+        // Get the URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedRadio = urlParams.get('select');
+
+        // Function to update header and paragraph based on selected radio button
+        function updateContent(id) {
+            let headerText = "";
+            let paragraphText = "";
+
+            switch(id) {
+                case "youtube":
+                    headerText = "It's Lecture Time";
+                    paragraphText = "Access detailed video lectures covering all important topics. Find all study-related videos and tutorials on our YouTube channel.";
+                    break;
+                case "notes":
+                    headerText = "My Notes";
+                    paragraphText = "Get Notes of every class & every subject you wanted.";
+                    break;
+                case "previous-exams":
+                    headerText = "Previous Exam Papers";
+                    paragraphText = "Review previous exam papers to prepare effectively.";
+                    break;
+                case "books":
+                    headerText = "Let's See The Text Books";
+                    paragraphText = "Review previous exam papers to prepare effectively.";
+                    break;
+                case "mock-test":
+                    headerText = "You wanna give Test";
+                    paragraphText = "You can also Give Test and Imporve you skills by giving them.";
+                    break;
+                case "earn":
+                    headerText = "Earn While Learn";
+                    paragraphText = "You can earn something while in your learning phase. Read about our Earn while Learn Scheme.";
+                    break;
+                default:
+                    headerText = "Select an Option";
+                    paragraphText = "Please choose an option to see more details.";
+                    break;
+            }
+
+            document.getElementById('header-text').textContent = headerText;
+            document.getElementById('paragraph-text').textContent = paragraphText;
+        }
+
+        // If the select parameter exists, trigger the radio button click
+        if (selectedRadio) {
+            const radioButton = document.getElementById(selectedRadio);
+            if (radioButton) {
+                radioButton.checked = true;
+                radioButton.dispatchEvent(new Event('change'));
+                updateContent(selectedRadio);  // Update content on page load based on URL
+            }
+        }
+
+        // Add event listeners to update content when a radio button is clicked
+        const radioButtons = document.querySelectorAll('input[name="radio-examples"]');
+        radioButtons.forEach(button => {
+            button.addEventListener('change', function() {
+                updateContent(this.id);
+            });
+        });
+    };
+
