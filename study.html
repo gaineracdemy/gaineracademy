@@ -79,56 +79,55 @@
             </div>
         </nav>
         <!-- Navbar End -->
-
-
+        
         <!-- Page Header End -->
         <div class="container-xxl py-5 page-header position-relative mb-5">
             <div class="container py-5">
-                <h1 class="display-2 text-white animated slideInDown mb-4">Study Notes</h1>
+                <h1 class="display-2 text-white animated slideInDown mb-4" id="card-text">Study Notes</h1>
                 <nav aria-label="breadcrumb animated slideInDown">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                         <li class="breadcrumb-item"><a href="#">Student Section</a></li>
-                        <li class="breadcrumb-item text-white active" aria-current="page">Notes</li>
                     </ol>
                 </nav>
             </div>
         </div>
         <!-- Page Header End -->
 
-        <!-- Modal -->
-        <div class="modal fade" id="chapterModal" tabindex="-1" aria-labelledby="chapterModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+<!-- Modal Structure for Chapter Selection and Download -->
+    <div class="modal fade" id="chapterModal" tabindex="-1" aria-labelledby="chapterModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="chapterModalLabel">Select Chapter</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="chapterModalLabel">Select Chapter</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body bg-light">
-                <div id="chapter-container" style="display: none;">
-                    <select id="chapter-select" style="background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3 mt-1">
-                    <option value="" disabled selected>-- Select Chapter -- </option>
-                    </select>
-                </div>
-                <div id="loading-icon" style="display: none;" class="spinner-border text-primary" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-                <div id="download-container" style="display: none; justify-content: center; margin-top:10px; ">
-                    <button id="download-button" class="button-30" role="button"><strong>Download Notes</strong></button>
-                </div>
-                <div id="error-message" style="display: none;" class="alert alert-danger" role="alert">
-                    Error fetching chapter data. Please try again.
-                </div>
+                    <div id="chapter-container">
+                        <select id="chapter-select" style="background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3 mt-1">
+                            <option value="" disabled selected>-- Select Chapter --</option>
+                        </select>
+                    </div>
+                    <div id="loading-icon" style="display: none;" class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <div id="download-container" style="display: none; justify-content: center; margin-top:10px; ">
+                        <button id="download-button" class="button-30" role="button"><strong>Download Notes</strong></button>
+                    </div>
+
+                    <div id="video-container" style="display: none; margin-top: 10px;">
+                    </div>
+
+                    <div id="error-message" style="display: none;" class="alert alert-danger" role="alert">
+                        Error fetching chapter data. Please try again.
+                    </div>
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
-            </div>
         </div>
-        
-
-
+    </div>
 
         <!-- Classes Start -->
         <div class="container-xxl py-5">
@@ -142,7 +141,7 @@
                         <div class="col-6 col-md-2">
                             <div class="radio-wrapper-22 border-top border-3 border-primary pt-2">
                                 <label class="radio-wrapper" for="youtube">
-                                    <input type="radio" class="radio-input" name="radio-examples" id="youtube" />
+                                    <input type="radio" class="radio-input" name="resource-type" value="youtube"  id="youtube" />
                                     <span class="radio-tile youtube">
                                         <span class="radio-icon">
                                             <i class="fab fa-youtube"></i>
@@ -157,7 +156,7 @@
                         <div class="col-6 col-md-2">
                             <div class="radio-wrapper-22 border-top border-3 border-warning pt-2">
                                 <label class="radio-wrapper" for="notes">
-                                    <input type="radio" class="radio-input" name="radio-examples" id="notes" />
+                                    <input type="radio" class="radio-input" name="resource-type"  value="notes" id="notes" checked/>
                                     <span class="radio-tile facebook">
                                         <span class="radio-icon">
                                             <i class="fa fa-file"></i>
@@ -172,7 +171,7 @@
                         <div class="col-6 col-md-2">
                             <div class="radio-wrapper-22 border-top border-3 border-info pt-2">
                                 <label class="radio-wrapper" for="books">
-                                    <input type="radio" class="radio-input" name="radio-examples" id="books" />
+                                    <input type="radio" class="radio-input" name="resource-type"  id="books" />
                                     <span class="radio-tile twitter">
                                         <span class="radio-icon">
                                             <i class="fa fa-book"></i>
@@ -187,7 +186,7 @@
                         <div class="col-6 col-md-2">
                             <div class="radio-wrapper-22 border-top border-3 border-danger pt-2">
                                 <label class="radio-wrapper" for="previous-exams">
-                                    <input type="radio" class="radio-input" name="radio-examples" id="previous-exams" />
+                                    <input type="radio" class="radio-input" name="resource-type"  id="previous-exams" />
                                     <span class="radio-tile exams">
                                         <span class="radio-icon">
                                             <i class="fas fa-clipboard"></i>
@@ -202,7 +201,7 @@
                         <div class="col-6 col-md-2">
                             <div class="radio-wrapper-22 border-top border-3 border-light pt-2">
                                 <label class="radio-wrapper" for="mock-test">
-                                    <input type="radio" class="radio-input" name="radio-examples" id="mock-test" />
+                                    <input type="radio" class="radio-input" name="resource-type"  id="mock-test" />
                                     <span class="radio-tile mock">
                                         <span class="radio-icon">
                                             <i class="fas fa-laptop"></i>
@@ -217,7 +216,7 @@
                         <div class="col-6 col-md-2">
                             <div class="radio-wrapper-22 border-top border-3 border-dark pt-2">
                                 <label class="radio-wrapper" for="earn">
-                                    <input type="radio" class="radio-input" name="radio-examples" id="earn" />
+                                    <input type="radio" class="radio-input" name="resource-type"  id="earn" />
                                     <span class="radio-tile earn">
                                         <span class="radio-icon">
                                             <i class="fa fa-rupee-sign"></i>
@@ -238,42 +237,20 @@
                         <div class="classes-item">
                             
                             <div class="bg-light rounded p-4 pt-5 mt-n5">
-                                <a class="d-block text-center h3 mt-3 mb-4" >12<sup>th</sup> - 11<sup>th</sup> Study Notes</a>
+                                <a class="d-block text-center h3 mt-3 mb-4 p-1" >12<sup>th</sup> - 11<sup>th</sup> Standard</a>
                                 <div class="d-flex center justify-content-between">
-                                    <select id="class-select-sr" style="background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="class-select-sr" style="background-color: rgb(255, 225, 215); border-radius: 15px;" class="class-select text-black py-2 px-3">
                                         <option value="">Select Class</option>
                                         <option value="12th">Class 12th</option>
                                         <option value="11th">Class 11th</option>
                                     </select>
                                 
-                                    <select id="subject-select-12th" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="subject-select-12th" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="subject-select text-black py-2 px-3">
                                         <option value="" disabled selected>Select Subject</option>
-                                        <option value="Chemistry">Chemistry</option>
-                                        <option value="Physics">Physics</option>
-                                        <option value="Biology">Biology</option>
-                                        <option value="Mathematics">Mathematics</option>
-                                        <option value="English">English</option>
-                                        <option value="History">History</option>
-                                        <option value="Economics">Economics</option>
-                                        <option value="Accountancy">Accountancy</option>
-                                        <option value="Business">Business Studies</option>
-                                        <option value="Physical">Physical Education</option>
-                                        <option value="Information">Information Pratice</option>
-                                        <option value="Computer">Computer Science</option>
                                     </select>
                                     
-                                    <select id="subject-select-11th" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="subject-select-11th" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="subject-select text-black py-2 px-3">
                                         <option value="" disabled selected>Select Subject</option>
-                                        <option value="Physics">Physics</option>
-                                        <option value="Chemistry">Chemistry</option>
-                                        <option value="Biology">Biology</option>
-                                        <option value="Mathematics">Mathematics</option>
-                                        <option value="Economic">Economic</option>
-                                        <option value="Accountancy">Accountancy</option>
-                                        <option value="Business">Business Studies</option>
-                                        <option value="Geography">Geography</option>
-                                        <option value="Informatics">Informatics Practice</option>
-                                        <option value="Computer">Computer Science</option>
                                     </select>
                                 </div>
                                                                                
@@ -304,51 +281,20 @@
                         <div class="classes-item">
                             
                             <div class="bg-light rounded p-4 pt-5 mt-n5">
-                                <a class="d-block text-center h3 mt-3 mb-4"  id="btn-11th" >10<sup>th</sup> - 9<sup>th</sup> Study Notes </a>
+                                    <a class="d-block text-center h3 mt-3 mb-4 p-1" id="btn-11th" >10<sup>th</sup> - 9<sup>th</sup> Standard</a> 
                                 <div class="d-flex center justify-content-between">
-                                    <select id="class-select-sec" style="background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="class-select-sec" style="background-color: rgb(255, 225, 215); border-radius: 15px;" class="class-select text-black py-2 px-3">
                                         <option value="">Select Class</option>
                                         <option value="10th">Class 10th</option>
                                         <option value="9th">Class 9th</option>
                                     </select>
                                 
-                                    <select id="subject-select-10th" style=" width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="subject-select-10th" style=" width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="subject-select text-black py-2 px-3">
                                         <option value="" disabled selected>Select Subject</option>
-                                        <option value="Science">Science</option>
-                                        <option value="English">English</option>
-                                        <option value="Social Science">Social Science</option>
-                                        <option value="Mathematics">Mathematics</option>
-                                        <option value="Maths Formulas">Maths Formulas</option>
-                                        <option value="भूगोल">भूगोल</option>
-                                        <option value="इतिहास">इतिहास</option>
-                                        <option value="गणित">गणित</option>
-                                        <option value="विज्ञान">विज्ञान</option>
-                                        <option value="राजनीति विज्ञान">राजनीति विज्ञान</option>
-                                        <option value="आर्थिक विकास की समझ">आर्थिक विकास की समझ</option>
-                                        <option value="कृतिका - II">कृतिका - II</option>
-                                        <option value="क्षितिज - II">क्षितिज - II</option>
-                                        <option value="संचयन - II">संचयन - II</option>
-                                        <option value="सपर्श - II">सपर्श - II</option>
-                                        
                                     </select>
                                     
-                                    <select id="subject-select-9th" style=" width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="subject-select-9th" style=" width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="subject-select text-black py-2 px-3">
                                         <option value="" disabled selected>Select Subject</option>
-                                        <option value ="Science">Science </option>
-                                        <option value ="Mathematics">Mathematics </option>
-                                        <option value ="Maths Formula">Maths Formula </option>
-                                        <option value ="Social Science">Social Science </option>
-                                        <option value ="अर्थशास्त्र">अर्थशास्त्र </option>
-                                        <option value ="भूगोल">भूगोल </option>
-                                        <option value ="इतिहास">इतिहास </option>
-                                        <option value ="गणित">गणित </option>
-                                        <option value ="राजनीति विज्ञान">राजनीति विज्ञान </option>
-                                        <option value ="विज्ञान">विज्ञान </option>
-                                        <option value ="समकालीन भारत">समकालीन भारत </option>
-                                        <option value ="कृतिका">कृतिका </option>
-                                        <option value ="क्षितिज">क्षितिज </option>
-                                        <option value ="संचयन">संचयन </option>
-                                        <option value ="स्पर्श">स्पर्श </option>
                                     </select>
                                 </div>
                                 
@@ -384,58 +330,25 @@
                         <div class="classes-item">
                             
                             <div class="bg-light rounded p-4 pt-5 mt-n5">
-                                <a class="d-block text-center h3 mt-3 mb-4" >8<sup>th</sup> - 6<sup>th</sup> Study Notes</a>
+                                <a class="d-block text-center h3 mt-3 mb-4" >8<sup>th</sup> - 6<sup>th</sup> Standard</a>
                                 <div class="d-flex center justify-content-between">
-                                    <select id="class-select-medium" style="background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="class-select-medium" style="background-color: rgb(255, 225, 215); border-radius: 15px;" class="class-select text-black py-2 px-3">
                                         <option value="">Select Class</option>
                                         <option value="8th">Class 8th</option>
                                         <option value="7th">Class 7th</option>
                                         <option value="6th">Class 6th</option>
                                     </select>
                                 
-                                    <select id="subject-select-8th" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="subject-select-8th" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="subject-select text-black py-2 px-3">
                                         <option value="" disabled selected>Select Subject</option>
-                                        <option value="Biology">Biology</option>
-                                        <option value="Chemistry">Chemistry</option>
-                                        <option value="Mathematics">Mathematics</option>
-                                        <option value="Physics">Physics</option>
-                                        <option value="Science">Science</option>
-                                        <option value="Social Science">Social Science</option>
-                                        <option value="नागरिकशास्र">नागरिकशास्र</option>
-                                        <option value="भूगोल">भूगोल</option>
-                                        <option value="इतिहास">इतिहास</option>
-                                        <option value="गणित">गणित</option>
-                                        <option value="विज्ञान">विज्ञान</option>
-                                        <option value="भारत की खोज">भारत की खोज</option>
-                                        <option value="वसंत">वसंत</option>
                                     </select>
                                     
-                                    <select id="subject-select-7th" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="subject-select-7th" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="subject-select text-black py-2 px-3">
                                         <option value="" disabled selected>Select Subject</option>
-                                        <option value="Biology">Biology</option> 
-                                        <option value="Chemistry">Chemistry</option> 
-                                        <option value="Mathematics">Mathematics</option> 
-                                        <option value="Physics">Physics</option> 
-                                        <option value="Science">Science</option> 
-                                        <option value="Social Science">Social Science</option> 
-                                        <option value="नागरिकशास्र">नागरिकशास्र</option> 
-                                        <option value="भूगोल">भूगोल</option> 
-                                        <option value="इतिहास">इतिहास</option> 
-                                        <option value="गणित">गणित</option> 
-                                        <option value="विज्ञान">विज्ञान</option> 
                                     </select>
 
-                                    <select id="subject-select-6th" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="subject-select-6th" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="subject-select text-black py-2 px-3">
                                         <option value="" disabled selected>Select Subject</option>
-                                        <option value="Biology"> Biology</option>
-                                        <option value="Chemistry"> Chemistry</option>
-                                        <option value="Mathematics"> Mathematics</option>
-                                        <option value="Physics"> Physics</option>
-                                        <option value="Science"> Science</option>
-                                        <option value="Social Science"> Social Science</option>
-                                        <option value="इतिहास"> इतिहास</option>
-                                        <option value="गणित"> गणित</option>
-                                        <option value="विज्ञान"> विज्ञान</option>
                                     </select>
                                 </div>
                                                                                
@@ -466,9 +379,9 @@
                         <div class="classes-item">
                             
                             <div class="bg-light rounded p-4 pt-5 mt-n5">
-                                <a class="d-block text-center h3 mt-3 mb-4" >5<sup>th</sup> - 1<sup>th</sup> Study Notes</a>
+                                <a class="d-block text-center h3 mt-3 mb-4" >5<sup>th</sup> - 1<sup>th</sup> Standard</a>
                                 <div class="d-flex center justify-content-between">
-                                    <select id="class-select-primary" style="background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="class-select-primary" style="background-color: rgb(255, 225, 215); border-radius: 15px;" class="class-select text-black py-2 px-3">
                                         <option value="">Select Class</option>
                                         <option value="5th">Class 5th</option>
                                         <option value="4th">Class 4th</option>
@@ -477,27 +390,27 @@
                                         <option value="1st">Class 1st</option>
                                     </select>
                                 
-                                    <select id="subject-select-5th" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="subject-select-5th" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="subject-select text-black py-2 px-3">
                                         <option value="" disabled selected>Select Subject</option>
 
                                     </select>
                                     
-                                    <select id="subject-select-4th" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="subject-select-4th" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="subject-select text-black py-2 px-3">
                                         <option value="" disabled selected>Select Subject</option>
    
                                     </select>
                                     
-                                    <select id="subject-select-3rd" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="subject-select-3rd" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="subject-select text-black py-2 px-3">
                                         <option value="" disabled selected>Select Subject</option>
    
                                     </select>
                                     
-                                    <select id="subject-select-2nd" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="subject-select-2nd" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="subject-select text-black py-2 px-3">
                                         <option value="" disabled selected>Select Subject</option>
    
                                     </select>
                                     
-                                    <select id="subject-select-1st" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="subject-select-1st" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="subject-select text-black py-2 px-3">
                                         <option value="" disabled selected>Select Subject</option>
    
                                     </select>
@@ -531,24 +444,24 @@
                             <div class="bg-light rounded p-4 pt-5 mt-n5">
                                 <a class="d-block text-center h3 mt-3 mb-4" >Univeristy Exam Notes</a>
                                 <div class="d-flex center justify-content-between">
-                                    <select id="class-select-University" style="background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="class-select-University" style="background-color: rgb(255, 225, 215); border-radius: 15px;" class="class-select text-black py-2 px-3">
                                         <option value="">Select Class</option>
                                         <option value="HAU">HAU</option>
                                         <option value="GJU">GJU</option>
                                         <option value="LUVAS">LUVAS</option>
                                     </select>
                                 
-                                    <select id="subject-select-HAU" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="subject-select-HAU" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="subject-select text-black py-2 px-3">
                                         <option value="" disabled selected>Select Subject</option>
 
                                     </select>
                                     
-                                    <select id="subject-select-GJU" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="subject-select-GJU" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="subject-select text-black py-2 px-3">
                                         <option value="" disabled selected>Select Subject</option>
    
                                     </select>
 
-                                    <select id="subject-select-LUVAS" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="subject-select-LUVAS" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="subject-select text-black py-2 px-3">
                                         <option value="" disabled selected>Select Subject</option>
    
                                     </select>
@@ -584,7 +497,7 @@
                             <div class="bg-light rounded p-4 pt-5 mt-n5">
                                 <a class="d-block text-center h3 mt-3 mb-4" >All India Entrance</a>
                                 <div class="d-flex center justify-content-between">
-                                    <select id="class-select-AIN" style="background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="class-select-AIN" style="background-color: rgb(255, 225, 215); border-radius: 15px;" class="class-select text-black py-2 px-3">
                                         <option value="">Select Class</option>
                                         <option value="JEE">JEE</option>
                                         <option value="NEET">NEET</option>
@@ -593,27 +506,27 @@
                                         <option value="CUET">CUET</option>
                                     </select>
                                 
-                                    <select id="subject-select-JEE" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="subject-select-JEE" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="subject-select text-black py-2 px-3">
                                         <option value="" disabled selected>Select Subject</option>
 
                                     </select>
                                     
-                                    <select id="subject-select-NEET" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="subject-select-NEET" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="subject-select text-black py-2 px-3">
                                         <option value="" disabled selected>Select Subject</option>
    
                                     </select>
                                     
-                                    <select id="subject-select-NET" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="subject-select-NET" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="subject-select text-black py-2 px-3">
                                         <option value="" disabled selected>Select Subject</option>
    
                                     </select>
                                     
-                                    <select id="subject-select-GATE" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="subject-select-GATE" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="subject-select text-black py-2 px-3">
                                         <option value="" disabled selected>Select Subject</option>
    
                                     </select>
                                     
-                                    <select id="subject-select-CUET" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="subject-select-CUET" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="subject-select text-black py-2 px-3">
                                         <option value="" disabled selected>Select Subject</option>
    
                                     </select>
@@ -646,14 +559,14 @@
                             <div class="bg-light rounded p-4 pt-5 mt-n5">
                                 <a class="d-block text-center h3 mt-3 mb-4" >Job Exam Notes</a>
                                 <div class="d-flex center justify-content-between">
-                                    <select id="class-select-job" style="background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="class-select-job" style="background-color: rgb(255, 225, 215); border-radius: 15px;" class="class-select text-black py-2 px-3">
                                         <option value="">Select Class</option>
                                         <option value="HSSC">HSSC</option>
                                         <option value="SSC">SSC</option>
                                         <option value="CET">CET</option>
                                     </select>
                                 
-                                    <select id="subject-select-HSSC" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="subject-select-HSSC" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="subject-select text-black py-2 px-3">
                                         <option value="" disabled selected>Select Subject</option>
 
                                     </select>
@@ -688,14 +601,14 @@
                             <div class="bg-light rounded p-4 pt-5 mt-n5">
                                 <a class="d-block text-center h3 mt-3 mb-4" >Basic Computer Notes</a>
                                 <div class="d-flex center justify-content-between">
-                                    <select id="class-select-Computer" style="background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="class-select-Computer" style="background-color: rgb(255, 225, 215); border-radius: 15px;" class="class-select text-black py-2 px-3">
                                         <option value="">Select Class</option>
                                         <option value="Photoshop">Photoshop</option>
                                         <option value="Typing">Typing</option>
                                         <option value="Graphics">Graphics Designing</option>
                                     </select>
                                 
-                                    <select id="subject-select-Photoshop" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="subject-select-Photoshop" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="subject-select  text-black py-2 px-3">
                                         <option value="" disabled selected>Select Subject</option>
 
                                     </select>
@@ -733,7 +646,7 @@
                             <div class="bg-light rounded p-4 pt-5 mt-n5">
                                 <a class="d-block text-center h3 mt-3 mb-4" >Advanced Computer Notes</a>
                                 <div class="d-flex center justify-content-between">
-                                    <select id="class-select-advComputer" style="background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="class-select-advComputer" style="background-color: rgb(255, 225, 215); border-radius: 15px;" class="class-select text-black py-2 px-3">
                                         <option value="">Select Class</option>
                                         <option value="C++">C++</option>
                                         <option value="C">Programming in C</option>
@@ -744,7 +657,7 @@
                                         <option value="3d">3D Designing</option>
                                     </select>
                                 
-                                    <select id="subject-select-C++" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="text-black py-2 px-3">
+                                    <select id="subject-select-C++" style="width: 160px; display: none; background-color: rgb(255, 225, 215); border-radius: 15px;" class="subject-select text-black py-2 px-3">
                                         <option value="" disabled selected>Select Subject</option>
 
                                     </select>
@@ -885,7 +798,7 @@
       
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/notes.js"></script>
+    <script src="js/study_section.js"></script>
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
