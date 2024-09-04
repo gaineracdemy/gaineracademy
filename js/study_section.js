@@ -1,7 +1,9 @@
 const scriptLinks = {
     "12th": {
         "notes": "https://script.google.com/macros/s/AKfycby7Dh-_aVyr75ywcfvpIyH-Gfd3n1WAbcRjUT0NocIp1rR72CFZqusIcB9vt1zHj2KEmw/exec",
-        "youtube": "https://script.google.com/macros/s/AKfycbwBd1Zjf6cwkxbu5oszmuNGajxRA8XlMxX_1WANFXpWRxROd36EqMx_2DMvBAs4k_POmQ/exec"
+        "youtube": "https://script.google.com/macros/s/AKfycbwBd1Zjf6cwkxbu5oszmuNGajxRA8XlMxX_1WANFXpWRxROd36EqMx_2DMvBAs4k_POmQ/exec",
+        "books": "https://script.google.com/macros/s/AKfycbxleuXLzLThWCKVGqLtz4EEhgHLmp1G8BEEFCQj98WbjZc-mS9YsVEDuIvEocIgukoq/exec",
+        "previous-exams": "prevoiuos year exam papers"
     },
     "11th": {
         "notes": "NOTES_LINK_FOR_11TH",
@@ -26,7 +28,71 @@ const scriptLinks = {
     "6th": {
         "notes": "NOTES_LINK_FOR_6TH",
         "youtube": "VIDEO_LINK_FOR_6TH"
-    }
+    },
+    "5th": {
+        "notes": "NOTES_LINK_FOR_6TH",
+        "youtube": "VIDEO_LINK_FOR_6TH"
+    },
+    "4th": {
+        "notes": "NOTES_LINK_FOR_6TH",
+        "youtube": "VIDEO_LINK_FOR_6TH"
+    },
+    "3th": {
+        "notes": "NOTES_LINK_FOR_6TH",
+        "youtube": "VIDEO_LINK_FOR_6TH"
+    },
+    "2nd": {
+        "notes": "NOTES_LINK_FOR_6TH",
+        "youtube": "VIDEO_LINK_FOR_6TH"
+    },
+    "1st": {
+        "notes": "NOTES_LINK_FOR_6TH",
+        "youtube": "VIDEO_LINK_FOR_6TH"
+    },
+    "HAU": {
+        "notes": "NOTES_LINK_FOR_6TH",
+        "youtube": "VIDEO_LINK_FOR_6TH"
+    },
+    "GJU": {
+        "notes": "NOTES_LINK_FOR_6TH",
+        "youtube": "VIDEO_LINK_FOR_6TH"
+    },
+    "LUVAS": {
+        "notes": "NOTES_LINK_FOR_6TH",
+        "youtube": "VIDEO_LINK_FOR_6TH"
+    },
+    "JEE": {
+        "notes": "NOTES_LINK_FOR_6TH",
+        "youtube": "VIDEO_LINK_FOR_6TH"
+    },
+    "NEET": {
+        "notes": "NOTES_LINK_FOR_6TH",
+        "youtube": "VIDEO_LINK_FOR_6TH"
+    },
+    "NET": {
+        "notes": "NOTES_LINK_FOR_6TH",
+        "youtube": "VIDEO_LINK_FOR_6TH"
+    },
+    "GATE": {
+        "notes": "NOTES_LINK_FOR_6TH",
+        "youtube": "VIDEO_LINK_FOR_6TH"
+    },
+    "CUET": {
+        "notes": "NOTES_LINK_FOR_6TH",
+        "youtube": "VIDEO_LINK_FOR_6TH"
+    },
+    "HSSC": {
+        "notes": "NOTES_LINK_FOR_6TH",
+        "youtube": "VIDEO_LINK_FOR_6TH"
+    },
+    "SSC": {
+        "notes": "NOTES_LINK_FOR_6TH",
+        "youtube": "VIDEO_LINK_FOR_6TH"
+    },
+    "CET": {
+        "notes": "NOTES_LINK_FOR_6TH",
+        "youtube": "VIDEO_LINK_FOR_6TH"
+    },
 };
 
 // Function to fetch and display subjects when a class is selected
@@ -191,62 +257,113 @@ document.querySelector('#class-select-sec').addEventListener('change', function(
     }
 });
 
+document.querySelector('#class-select-medium').addEventListener('change', function() {
+    const radioType = document.querySelector('input[name="resource-type"]:checked')?.value;
+    const className = this.value;
+    if (className && radioType) {
+        fetchSubjects(className);
+    }
+});
+
+document.querySelector('#class-select-primary').addEventListener('change', function() {
+    const radioType = document.querySelector('input[name="resource-type"]:checked')?.value;
+    const className = this.value;
+    if (className && radioType) {
+        fetchSubjects(className);
+    }
+});
+
+document.querySelector('#class-select-University').addEventListener('change', function() {
+    const radioType = document.querySelector('input[name="resource-type"]:checked')?.value;
+    const className = this.value;
+    if (className && radioType) {
+        fetchSubjects(className);
+    }
+});
+
+document.querySelector('#class-select-AIN').addEventListener('change', function() {
+    const radioType = document.querySelector('input[name="resource-type"]:checked')?.value;
+    const className = this.value;
+    if (className && radioType) {
+        fetchSubjects(className);
+    }
+});
+
+document.querySelector('#class-select-job').addEventListener('change', function() {
+    const radioType = document.querySelector('input[name="resource-type"]:checked')?.value;
+    const className = this.value;
+    if (className && radioType) {
+        fetchSubjects(className);
+    }
+});
+
+document.querySelector('#class-select-Computer').addEventListener('change', function() {
+    const radioType = document.querySelector('input[name="resource-type"]:checked')?.value;
+    const className = this.value;
+    if (className && radioType) {
+        fetchSubjects(className);
+    }
+});
+
+document.querySelector('#class-select-advComputer').addEventListener('change', function() {
+    const radioType = document.querySelector('input[name="resource-type"]:checked')?.value;
+    const className = this.value;
+    if (className && radioType) {
+        fetchSubjects(className);
+    }
+});
+
 
 //  Script to Handle Selection 
 window.onload = function() {
     // Get the URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const selectedRadio = urlParams.get('select');
-
-    // Function to update header and paragraph based on selected radio button
-    function updateContent(id) {
-        subjectSelect.style.display = 'none';
-
-        let headerText = "";
-        let paragraphText = "";
-
-        switch(id) {
-            case "youtube":
-                headerText = "It's lecture time";
-                cardsText = " Videos Lecture";
-                paragraphText = "Access detailed video lectures covering all important topics. Find all study-related videos and tutorials on our YouTube channel.";
-                break;
-            case "notes":
-                    headerText = "My Notes";
-                    cardsText = " Study Notes";
-                    paragraphText = "Get Notes of every class & every subject you wanted.";
-                    break;
-            case "previous-exams":
-                headerText = "Previous Exam Papers";
-                cardsText = "Exam Papers";
-                paragraphText = "Review previous exam papers to prepare effectively.";
-                break;
-            case "books":
-                headerText = "Let's See The Text Books";
-                cardsText = "Books Download";
-                paragraphText = "Review previous exam papers to prepare effectively.";
-                break;
-            case "mock-test":
-                cardsText = "Mock Test";
-                headerText = "You wanna give a Test";
-                paragraphText = "You can also Give Test and Imporve you skills by giving them.";
-                break;
-            case "earn":
-                cardsText ="Earn While Learn";
-                headerText = "Earn While Learn";
-                paragraphText = "You can earn something while in your learning phase. Read about our Earn while Learn Scheme.";
-                break;
-            default:
-                headerText = "Select an Option";
-                paragraphText = "Please choose an option to see more details.";
-                break;
-        }
-
-        document.getElementById('header-text').textContent = headerText;
-        document.getElementById('card-text').textContent = cardsText;
-        document.getElementById('paragraph-text').textContent = paragraphText;
+// Function to update header and paragraph based on selected radio button
+function updateContent(id) {
+    let headerText = "";
+    let paragraphText = "";
+    switch(id) {
+        case "youtube":
+            headerText = "It's lecture time";
+            cardsText = " Videos Lecture";
+            paragraphText = "Access detailed video lectures covering all important topics. Find all study-related videos and tutorials on our YouTube channel.";
+            break;
+        case "notes":
+            headerText = "My Notes";
+            cardsText = " Study Notes";
+            paragraphText = "Get Notes of every class & every subject you wanted.";
+            break;
+        case "previous-exams":
+            headerText = "Previous Exam Papers";
+            cardsText = "Exam Papers";
+            paragraphText = "Review previous exam papers to prepare effectively.";
+            break;
+        case "books":
+            headerText = "Let's See The Text Books";
+            cardsText = "Books Download";
+            paragraphText = "Review previous exam papers to prepare effectively.";
+            break;
+        case "mock-test":
+            cardsText = "Mock Test";
+            headerText = "You wanna give a Test";
+            paragraphText = "You can also Give Test and Imporve you skills by giving them.";
+            break;
+        case "earn":
+            cardsText ="Earn While Learn";
+            headerText = "Earn While Learn";
+            paragraphText = "You can earn something while in your learning phase. Read about our Earn while Learn Scheme.";
+            break;
+        default:
+            headerText = "Select an Option";
+            paragraphText = "Please choose an option to see more details.";
+            break;
     }
 
+    document.getElementById('header-text').textContent = headerText;
+    document.getElementById('card-text').textContent = cardsText;
+    document.getElementById('paragraph-text').textContent = paragraphText;
+}
     // If the select parameter exists, trigger the radio button click
     if (selectedRadio) {
         const radioButton = document.getElementById(selectedRadio);
@@ -261,9 +378,12 @@ window.onload = function() {
     const radioButtons = document.querySelectorAll('input[name="resource-type"]');
     radioButtons.forEach(button => {
         button.addEventListener('change', function() {
+        // console.log(`Radio button with ID: ${this.id} Clicked.`);
             updateContent(this.id);
         });
     });
+
+
 };
 
 
@@ -310,3 +430,46 @@ document.querySelectorAll('input[type="radio"]').forEach(radio => {
 });
 
 
+    // Event listeners for the buttons
+    document.getElementById('join-us-button').addEventListener('click', function() {
+        setModalContent('joinUs');
+    });
+
+    document.getElementById('feedback-button').addEventListener('click', function() {
+        setModalContent('feedback');
+    });
+
+    document.getElementById('support-us-button').addEventListener('click', function() {
+        setModalContent('supportUs');
+    });
+
+    // Function to set modal content based on the button clicked
+    function setModalContent(type) {
+        const dynamicContent = document.getElementById('dynamic-content');
+        dynamicContent.innerHTML = ''; // Clear previous content
+
+        if (type === 'joinUs') {
+            dynamicContent.innerHTML = `
+                <p>Join us on WhatsApp:</p>
+                <a href="https://wa.me/+919728131692" class="btn btn-primary" target="_blank">Join via WhatsApp</a>
+            `;
+        } else if (type === 'feedback') {
+            dynamicContent.innerHTML = `
+                <p>Rate Us:</p>
+                <div class="rating mb-2">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
+                <textarea id="feedback-message" class="form-control" rows="3" placeholder="Leave your feedback here..."></textarea>
+            `;
+        } else if (type === 'supportUs') {
+            dynamicContent.innerHTML = `
+                <p>Thank you for your support!</p>
+                <img src="img/QR.jpg" alt="QR Code" style="max-width: 150px; margin: 10px auto;">
+                <p>Scan the QR code to support us!</p>
+            `;
+        }
+    }
