@@ -3,7 +3,7 @@ const scriptLinks = {
         "notes": "https://script.google.com/macros/s/AKfycby7Dh-_aVyr75ywcfvpIyH-Gfd3n1WAbcRjUT0NocIp1rR72CFZqusIcB9vt1zHj2KEmw/exec",
         "youtube": "https://script.google.com/macros/s/AKfycbwBd1Zjf6cwkxbu5oszmuNGajxRA8XlMxX_1WANFXpWRxROd36EqMx_2DMvBAs4k_POmQ/exec",
         "books": "https://script.google.com/macros/s/AKfycbxleuXLzLThWCKVGqLtz4EEhgHLmp1G8BEEFCQj98WbjZc-mS9YsVEDuIvEocIgukoq/exec",
-        "previous-exams": "prevoiuos year exam papers"
+        "previous-exams": "https://script.google.com/macros/s/AKfycbxMIN9NC5q7gi3MQRoI4qHfnXvnO1Dm7yCSEEyVOn-2byT1xqpqdWZ7-fpHaFdTNQVfeQ/exec"
     },
     "11th": {
         "notes": "NOTES_LINK_FOR_11TH",
