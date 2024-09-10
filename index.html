@@ -41,7 +41,6 @@
         </div>
         <!-- Spinner End -->
 
-
         <!-- Navbar Start -->
         <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
             <a href="index.html" class="navbar-brand">
@@ -61,9 +60,11 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Student Section</a>
                         <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
-                            <a href="study.html" class="dropdown-item">Study Notes</a>
-                            <a href="facility.html" class="dropdown-item">Video Lecture</a>
-                            <a href="call-to-action.html" class="dropdown-item">Previous Exam Papers</a>
+                            <!-- Hyperlinks to Trigger Radio Buttons -->
+                            <a href="study.html?select=notes" class="dropdown-item">Study Notes</a>
+                            <a href="study.html?select=youtube" class="dropdown-item">Video Lecture</a>
+                            <a href="study.html?select=books" class="dropdown-item">Text Books</a>
+                            <a href="" class="dropdown-item">Previous Exam Papers</a>
                             <a href="appointment.html" class="dropdown-item">Mock Test</a>
                             <a href="testimonial.html" class="dropdown-item">Events</a>
                             <a href="testimonial.html" class="dropdown-item">Gallery</a>
@@ -75,7 +76,6 @@
             </div>
         </nav>
         <!-- Navbar End -->
-
 
         <!-- Carousel Start -->
         <div class="container-fluid p-0 mb-5">
@@ -129,139 +129,61 @@
         </div>
         <!-- Carousel End -->
 
-
-        <!-- Facilities Start -->
-        <div class="container-xxl py-5">
+        <!-- Stay Positive Start -->
+        <div style="font-family:cursive" class="container-xxl py-5">
             <div class="container">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" >
-                    <h4 class="mb-3">~You are the Key of your Success~</h4>
-                    <h1 class="mb-3">Some Key Features of Our Faculty</h1>
-                    <p>"At Gainers Academy, we offer a wide range of programs and resources to help you succeed and reach your full potential. Our dedicated teachers and staff are here to support you every step of the way. We are excited to welcome you to our Coaching Centre and look forward to the many opportunities for learning and growth that lie ahead. Apply now and take the first step on your journey to success."</p>
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h1 class="mb-3">:) Stay Positive !</h1>
                 </div>
-                <div class="row g-4">
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="facility-item">
-                            <div class="facility-icon bg-primary">
-                                <span class="bg-primary"></span>
-                                <i class="fa fa-rupee-sign fa-3x text-primary"></i>
-                                <span class="bg-primary"></span>
+                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="testimonial-item bg-light rounded p-5">
+                        <p class="fs-5">"End is not the end if fact E.N.D. Means "Efforts Never Dies</p>
+                        <div class="d-flex align-items-center bg-white me-n5" style="border-radius: 50px 0 0 50px;">
+                            <!-- <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg" style="width: 90px; height: 90px;"> -->
+                            <div class="ps-3">
+                                <h6 class="mb-1">Dr. A.P.J. Abdul Kalam</h6>
+                                <!-- <span>Profession</span> -->
                             </div>
-                            <div class="facility-text bg-primary">
-                                <h3 class="text-primary mb-3">Negligible Fee</h3>
-                                <p class="mb-0"><strong>Free</strong> Coaching for Talented & Financially Weak Students, Otherwise we also have affordable fee stucture for Everyone</p>
-                            </div>
+                            <i class="fa fa-quote-right fa-3x text-primary ms-auto d-none d-sm-flex"></i>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="facility-item">
-                            <div class="facility-icon bg-success">
-                                <span class="bg-success"></span>
-                                <i class="fa fa-book fa-3x text-success"></i>
-                                <span class="bg-success"></span>
+                    <div class="testimonial-item bg-light rounded p-5">
+                        <p class="fs-5">"Success is the sum of all efforts, repeated day-in & day out."</p>
+                        <div class="d-flex align-items-center bg-white me-n5" style="border-radius: 50px 0 0 50px;">
+                            <!-- <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg" style="width: 90px; height: 90px;"> -->
+                            <div class="ps-3">
+                                <h6 class="mb-1">R. Collier</h6>
+                                <!-- <span>Profession</span> -->
                             </div>
-                            <div class="facility-text bg-success">
-                                <h3 class="text-success mb-3">Facilities</h3>
-                                <p class="mb-0">Our library is not just a collection of books, it is a place where students can find the resources they need to succeed and research their interests</p>
-                            </div>
+                            <i class="fa fa-quote-right fa-3x text-primary ms-auto d-none d-sm-flex"></i>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="facility-item">
-                            <div class="facility-icon bg-warning">
-                                <span class="bg-warning"></span>
-                                <i class="fa fa-home fa-3x text-warning"></i>
-                                <span class="bg-warning"></span>
+                    <div class="testimonial-item bg-light rounded p-5">
+                        <p class="fs-5">"Opportunity does not happen, You need to create them."</p>
+                        <div class="d-flex align-items-center bg-white me-n5" style="border-radius: 50px 0 0 50px;">
+                            <!-- <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg" style="width: 90px; height: 90px;"> -->
+                            <div class="ps-3">
+                                <h6 class="mb-1">Chris Grosser</h6>
+                                <!-- <span>Profession</span> -->
                             </div>
-                            <div class="facility-text bg-warning">
-                                <h3 class="text-warning mb-3">Infrastucture</h3>
-                                <p class="mb-0">Clean and Silent Enviroment. Here, you will have the opportunity to grow academically, socially, and personally in a nurturing and supportive environment.</p>
-                            </div>
+                            <i class="fa fa-quote-right fa-3x text-primary ms-auto d-none d-sm-flex"></i>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="facility-item">
-                            <div class="facility-icon bg-info">
-                                <span class="bg-info"></span>
-                                <i class="fa fa-chalkboard-teacher fa-3x text-info"></i>
-                                <span class="bg-info"></span>
+                    <div class="testimonial-item bg-light rounded p-5">
+                        <p class="fs-5">I never dreamed about success. I worked for it</p>
+                        <div class="d-flex align-items-center bg-white me-n5" style="border-radius: 50px 0 0 50px;">
+                            <!-- <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg" style="width: 90px; height: 90px;"> -->
+                            <div class="ps-3">
+                                <h6 class="mb-1">Estée Lauder</h6>
+                                <!-- <span>Profession</span> -->
                             </div>
-                            <div class="facility-text bg-info">
-                                <h3 class="text-info mb-3">Teachers</h3>
-                                <p class="mb-0">Experienced & well Graduated Staff, We are committed to providing an excellent education and preparing our students for success in college and beyond.</p>
-                            </div>
+                            <i class="fa fa-quote-right fa-3x text-primary ms-auto d-none d-sm-flex"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Facilities End -->
-
-
-        <!-- About Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <h1 class="mb-4">Learn More About Our Workflows And Our Teaching Technique</h1>
-                        <p>Learn Anything, Anywhere, Anytime. Improve your skills with our Tutorials. Unlock your potential and achieve success with us and Unleash your inner genius with our expert guidance.</p>
-                        <p class="mb-4">We offering a wide range of educational programs for all ages groups and all standard. We have dedicated teachers for helping students to reach their full potential and also guide students of their journey to success. Helping students achieve academic excellence with our Coaching.</p>
-                        <div class="row g-4 align-items-center">
-                            <div class="col-sm-6">
-                                <a class="btn btn-primary rounded-pill py-3 px-5" href="">Read More</a>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 45px; height: 45px;">
-                                    <div class="ms-3">
-                                        <h6 class="text-primary mb-1"> <small>Rajiv Singh & Pankaj Verma</small></h6>
-                                        <small>CEO & Founder</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 about-img wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="row">
-                            <div class="col-12 text-center">
-                                <img class="img-fluid w-75 rounded-circle bg-light p-3" src="img/about-1.png" alt="">
-                            </div>
-                            <div class="col-6 text-start" style="margin-top: -150px;">
-                                <img class="img-fluid w-100 rounded-circle bg-light p-3" src="img/about-2.png" alt="">
-                            </div>
-                            <div class="col-6 text-end" style="margin-top: -150px;">
-                                <img class="img-fluid w-100 rounded-circle bg-light p-3" src="img/about-3.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- About End -->
-
-
-        <!-- Call To Action Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="bg-light rounded">
-                    <div class="row g-0">
-                        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
-                            <div class="position-relative h-100">
-                                <img class="position-absolute w-100 h-100 rounded" src="img/call-to-action.jpg" style="object-fit: cover;">
-                            </div>
-                        </div>
-                        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                            <div class="h-100 d-flex flex-column justify-content-center p-5">
-                                <h1 class="mb-4">Do you wanna see your child be a part of Gainer Academy ?</h1>
-                                <p class="mb-4">If you are interested in joining us as a students, please book a simple appointment and provide your basic details. Our team will contact you to arrange an interview.</p>
-                                <a class="btn btn-primary py-3 px-5" href="">Get Addmission<i class="fa fa-arrow-right ms-2"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Call To Action End -->
-
+        <!-- Stay Positive  End -->
 
         <!-- Classes Start -->
         <div class="container-xxl py-5">
@@ -581,49 +503,71 @@
         </div>
         <!-- Classes End -->
 
-
-        <!-- Appointment Start -->
+        <!-- Call To Action Start -->
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="bg-light rounded">
                     <div class="row g-0">
+                        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
+                            <div class="position-relative h-100">
+                                <img class="position-absolute w-100 h-100 rounded" src="img/Schoolarship_Web.png" style="object-fit: cover;">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                            <div class="h-100 d-flex flex-column justify-content-center p-5">
+                                <h1 class="mb-4">Get a Chance for Free Coaching at Gainer Academy !</h1>
+                                <p class="mb-4">Elevate Your Learning with Gainer Academy! Your chance to experience top-notch coaching without any cost. Don't let this golden opportunity slip away! Limited seats are filling fast. Limited Seats Available – Don’t Miss Out! Register Now to Secure Your Spot!</p>
+                                <a class="btn btn-primary py-3 px-5" href="#schoolarship_form">Register Now & Get Addmission<i class="fa fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Call To Action End -->
+
+        <!-- Schoolarship Start -->
+        <div id="schoolarship_form" class="container-xxl py-5">
+            <div class="container">
+                <div  class="bg-light rounded">
+                    <div class="row g-0">
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                             <div class="h-100 d-flex flex-column justify-content-center p-5">
-                                <h1 class="mb-4">Make Appointment</h1>
-                                <form>
+                                <h1 class="mb-4">Schoolarship Form</h1>
+                                <form id="schoolarship_form1">
                                     <div class="row g-3">
                                         <div class="col-sm-6">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="gname" placeholder="Gurdian Name">
+                                                <input type="text" class="form-control border-0" id="gname" placeholder="Your Name">
                                                 <label for="gname">Your Name</label>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-floating">
-                                                <input type="email" class="form-control border-0" id="gmail" placeholder="Gurdian Email">
-                                                <label for="gmail">Your Email</label>
+                                                <input type="number" class="form-control border-0" id="number" placeholder="Contact No.">
+                                                <label for="number">Contact No.</label>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="cname" placeholder="Child Name">
-                                                <label for="cname">Contact No.</label>
+                                                <input type="text" class="form-control border-0" id="class" placeholder="Current Class">
+                                                <label for="class">Current Class</label>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="cage" placeholder="Child Age">
-                                                <label for="cage">Address</label>
+                                                <input type="text" class="form-control border-0" id="school" placeholder="Your School">
+                                                <label for="school">Your School</label>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-floating">
-                                                <textarea class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
-                                                <label for="message">Purpose</label>
+                                                <input type="text"  class="form-control border-0" placeholder="address" id="address" ></input>
+                                                <label for="address">Your Address</label>
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                                            <button class="btn btn-primary w-100 py-3" type="submit"><strong style="letter-spacing: 1px;">Submit  Schoolarship  Form</strong></button>
                                         </div>
                                     </div>
                                 </form>
@@ -638,8 +582,114 @@
                 </div>
             </div>
         </div>
-        <!-- Appointment End -->
+        <!-- Schoolarship End -->
 
+        <!-- Facilities Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" >
+                    <h4 class="mb-3">~You are the Key of your Success~</h4>
+                    <h1 class="mb-3">Some Key Features of Our Faculty</h1>
+                    <p>"At Gainers Academy, we offer a wide range of programs and resources to help you succeed and reach your full potential. Our dedicated teachers and staff are here to support you every step of the way. We are excited to welcome you to our Coaching Centre and look forward to the many opportunities for learning and growth that lie ahead. Apply now and take the first step on your journey to success."</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="facility-item">
+                            <div class="facility-icon bg-primary">
+                                <span class="bg-primary"></span>
+                                <i class="fa fa-rupee-sign fa-3x text-primary"></i>
+                                <span class="bg-primary"></span>
+                            </div>
+                            <div class="facility-text bg-primary">
+                                <h3 class="text-primary mb-3">Negligible Fee</h3>
+                                <p class="mb-0"><strong>Free</strong> Coaching for Talented & Financially Weak Students, Otherwise we also have affordable fee stucture for Everyone</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="facility-item">
+                            <div class="facility-icon bg-success">
+                                <span class="bg-success"></span>
+                                <i class="fa fa-book fa-3x text-success"></i>
+                                <span class="bg-success"></span>
+                            </div>
+                            <div class="facility-text bg-success">
+                                <h3 class="text-success mb-3">Facilities</h3>
+                                <p class="mb-0">Our library is not just a collection of books, it is a place where students can find the resources they need to succeed and research their interests</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="facility-item">
+                            <div class="facility-icon bg-warning">
+                                <span class="bg-warning"></span>
+                                <i class="fa fa-home fa-3x text-warning"></i>
+                                <span class="bg-warning"></span>
+                            </div>
+                            <div class="facility-text bg-warning">
+                                <h3 class="text-warning mb-3">Infrastucture</h3>
+                                <p class="mb-0">Clean and Silent Enviroment. Here, you will have the opportunity to grow academically, socially, and personally in a nurturing and supportive environment.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="facility-item">
+                            <div class="facility-icon bg-info">
+                                <span class="bg-info"></span>
+                                <i class="fa fa-chalkboard-teacher fa-3x text-info"></i>
+                                <span class="bg-info"></span>
+                            </div>
+                            <div class="facility-text bg-info">
+                                <h3 class="text-info mb-3">Teachers</h3>
+                                <p class="mb-0">Experienced & well Graduated Staff, We are committed to providing an excellent education and preparing our students for success in college and beyond.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Facilities End -->
+
+        <!-- About Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <h1 class="mb-4">Learn More About Our Workflows And Our Teaching Technique</h1>
+                        <p>Learn Anything, Anywhere, Anytime. Improve your skills with our Tutorials. Unlock your potential and achieve success with us and Unleash your inner genius with our expert guidance.</p>
+                        <p class="mb-4">We offering a wide range of educational programs for all ages groups and all standard. We have dedicated teachers for helping students to reach their full potential and also guide students of their journey to success. Helping students achieve academic excellence with our Coaching.</p>
+                        <div class="row g-4 align-items-center">
+                            <div class="col-sm-6">
+                                <a class="btn btn-primary rounded-pill py-3 px-5" href="">More About Us</a>
+                            </div>
+                            <!-- <div class="col-sm-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 45px; height: 45px;">
+                                    <div class="ms-3">
+                                        <h6 class="text-primary mb-1"> <small>Rajiv Singh & Pankaj Verma</small></h6>
+                                        <small>CEO & Founder</small>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-6 about-img wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <img class="img-fluid w-75 rounded-circle bg-light p-3" src="img/about-1.png" alt="">
+                            </div>
+                            <div class="col-6 text-start" style="margin-top: -150px;">
+                                <img class="img-fluid w-100 rounded-circle bg-light p-3" src="img/about-2.png" alt="">
+                            </div>
+                            <div class="col-6 text-end" style="margin-top: -150px;">
+                                <img class="img-fluid w-100 rounded-circle bg-light p-3" src="img/about-3.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
 
         <!-- Team Start -->
         <div class="container-xxl py-5">
@@ -653,97 +703,39 @@
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="team-item position-relative">
                             <img class="img-fluid rounded-circle " src="img/team-1.jpg" alt="">
-                            <div class="team-text">
+                            <!-- <div class="team-text">
                                 <h3>near HAU</h3>
                                 <p>Joshi Complex, besides petrol pump, balsamand road, Hisar</p>
-                                <!-- <div class="d-flex align-items-center">
+                                <div class="d-flex align-items-center">
                                     <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                                     <a class="btn btn-square btn-primary  mx-1" href=""><i class="fab fa-twitter"></i></a>
                                     <a class="btn btn-square btn-primary  mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                </div> -->
-                            </div>
+                                </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="team-item position-relative">
                             <img class="img-fluid rounded-circle " src="img/team-2.jpg" alt="">
-                            <div class="team-text">
+                            <!-- <div class="team-text">
                                 <h3>Hindwan</h3>
                                 <p>Vill. Hindwan, Near Bus Stand, Hisar</p>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-item position-relative">
                             <img class="img-fluid rounded-circle " src="img/team-3.jpg" alt="">
-                            <div class="team-text">
+                            <!-- <div class="team-text">
                                 <h3>PLA Market</h3>
                                 <p>near Reliance Fresh, 4th floor, PLA Market, Hisar</p>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Team End -->
-
-
-        <!-- Testimonial Start -->
-        <div style="font-family:cursive" class="container-xxl py-5">
-            <div class="container">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3">:) Stay Positive !</h1>
-                </div>
-                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="testimonial-item bg-light rounded p-5">
-                        <p class="fs-5">"End is not the end if fact E.N.D. Means "Efforts Never Dies</p>
-                        <div class="d-flex align-items-center bg-white me-n5" style="border-radius: 50px 0 0 50px;">
-                            <!-- <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg" style="width: 90px; height: 90px;"> -->
-                            <div class="ps-3">
-                                <h6 class="mb-1">Dr. A.P.J. Abdul Kalam</h6>
-                                <!-- <span>Profession</span> -->
-                            </div>
-                            <i class="fa fa-quote-right fa-3x text-primary ms-auto d-none d-sm-flex"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-light rounded p-5">
-                        <p class="fs-5">"Success is the sum of all efforts, repeated day-in & day out."</p>
-                        <div class="d-flex align-items-center bg-white me-n5" style="border-radius: 50px 0 0 50px;">
-                            <!-- <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg" style="width: 90px; height: 90px;"> -->
-                            <div class="ps-3">
-                                <h6 class="mb-1">R. Collier</h6>
-                                <!-- <span>Profession</span> -->
-                            </div>
-                            <i class="fa fa-quote-right fa-3x text-primary ms-auto d-none d-sm-flex"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-light rounded p-5">
-                        <p class="fs-5">"Opportunity does not happen, You need to create them."</p>
-                        <div class="d-flex align-items-center bg-white me-n5" style="border-radius: 50px 0 0 50px;">
-                            <!-- <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg" style="width: 90px; height: 90px;"> -->
-                            <div class="ps-3">
-                                <h6 class="mb-1">Unknown</h6>
-                                <!-- <span>Profession</span> -->
-                            </div>
-                            <i class="fa fa-quote-right fa-3x text-primary ms-auto d-none d-sm-flex"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-light rounded p-5">
-                        <p class="fs-5">I never dreamed about success. I worked for it</p>
-                        <div class="d-flex align-items-center bg-white me-n5" style="border-radius: 50px 0 0 50px;">
-                            <!-- <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg" style="width: 90px; height: 90px;"> -->
-                            <div class="ps-3">
-                                <h6 class="mb-1">Estée Lauder</h6>
-                                <!-- <span>Profession</span> -->
-                            </div>
-                            <i class="fa fa-quote-right fa-3x text-primary ms-auto d-none d-sm-flex"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Testimonial End -->
-
 
         <!-- Footer Start -->
         <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -752,7 +744,7 @@
                     <div class="col-lg-3 col-md-6">
                         <h3 class="text-white mb-4">Get In Touch</h3>
                         <!-- <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>2nd Floor, Joshi Complex, near HAU Gate 2, Hisar, Haryana 125501</p> -->
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 97281 31692</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 97281-31692</p>
                         <p class="mb-2"><i class="fa fa-envelope me-3"></i>gaineracademy@gmail.com</p>
                         <div class="d-flex pt-2">
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
@@ -825,12 +817,12 @@
         </div>
         <!-- Footer End -->
 
-
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 
     <!-- JavaScript Libraries -->
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
