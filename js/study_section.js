@@ -6,7 +6,7 @@ const scriptLinks = {
         "previous-exams": "https://script.google.com/macros/s/AKfycbxMIN9NC5q7gi3MQRoI4qHfnXvnO1Dm7yCSEEyVOn-2byT1xqpqdWZ7-fpHaFdTNQVfeQ/exec"
     },
     "11th": {
-        "notes": "NOTES_LINK_FOR_11TH",
+        "notes": "https://script.google.com/macros/s/AKfycbwW8Ry8reIc1PTWTQvp7khYVbEPW6Qv6DZC8AKksQJlVtKu5ADjnJV_dYyvUCoKFdlB/exec",
         "youtube": "VIDEO_LINK_FOR_11TH"
     },
     "10th": {
