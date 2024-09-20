@@ -7,7 +7,7 @@ const scriptLinks = {
     },
     "11th": {
         "notes": "https://script.google.com/macros/s/AKfycbwW8Ry8reIc1PTWTQvp7khYVbEPW6Qv6DZC8AKksQJlVtKu5ADjnJV_dYyvUCoKFdlB/exec",
-        "youtube": "VIDEO_LINK_FOR_11TH"
+        "youtube": "https://script.google.com/macros/s/AKfycbyGhDdQoezNP5yoCrIT8291rIwzZj0TufwFiUWznJXL4CbY6x4NqqCmJjP5AwBWvZnO/exec"
     },
     "10th": {
         "notes": "NOTES_LINK_FOR_10TH",
